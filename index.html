@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="./imagens/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./imagens/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="./styles/style.css">
+    
+    <script src="./scripts/player.js"></script>
+    <script src="./scripts/load.js"></script>
+    <script src="./scripts/sketch.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js"></script>
+    <script src="https://unpkg.com/ml5@0.6.1/dist/ml5.min.js"></script> 
+
+    <title>Você está sendo codificado</title>
+</head>
+<body>
+
+    <div class="v-header container">
+        
+        <!-- Camada de video z-index -1 -->
+        <div class="fullscreen-video-wrap">
+            <video id="myvideo" preload="metadata">
+                <source src="./videos/VESC_v2.m4v" type="video/mp4">
+            </video>
+        </div>
+        <!-- Camada de video z-index -1 -->
+
+        <!-- Camada de aviso z-index 1 e 2 -->
+        <div id="sketch-video" class="button-overlay"></div>
+        <div class="button-content">
+            <div id="button-play-box">
+                <a href="#"> <img src="./imagens/play-button.png" id="button-play" class="play-button"></img> </a>
+            </div>
+            <p class="blink">Clique na câmera para começar</p>
+        </div>
+
+        <div class="full-button">
+            <a id="fullscreen" href="#"> <img src="./imagens/fullscreen-button.png"> </a>
+        </div>
+
+        <!-- Camada de aviso z-index 1 e 2 -->
+
+        <!-- Camada de aviso z-index 3 e 4 -->
+        <div class="warn-overlay"></div>
+        <div class="warn-content">
+            <p class="title-warn">comunicado sobre inteligência artificial: <br></p>
+            <p class="content-warn">VOCÊ ESTÁ SENDO CODIFICADO acessa sua câmera e usa um agente I.A. para analisar sua imagem.
+                Nós NÃO transmitimos, armazenamos ou compartilhamos seus arquivos. VOCÊ ESTÁ SENDO CODIFICADO
+                é, somente, para propósitos artísticos. Nós estamos comprometidos em preservar sua privacidade. <br>
+            </p>
+            <p id="countdown"></p>
+        </div>
+        <!-- Camada de aviso z-index 3 e 4 -->
+
+        <!-- Camada de loading overlay = z-index 5 e content = z-index 6 -->
+        <div class="header-overlay"></div>
+        <div class="header-content">
+            <div class="loader"></div>
+        </div>
+        <!-- Camada de loading overlay = z-index 5 e content = z-index 6 -->
+
+    </div>
+</body>
+</html>
